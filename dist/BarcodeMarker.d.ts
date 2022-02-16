@@ -1,5 +1,6 @@
 import { Object3D } from "three";
 import { BaseMarker } from "./BaseMarker";
+
 /**
  * BarcodeMarker take a given predtermined barcode as the pattern to detect. Each barcode has
  * a predetermined number, for example the 3x3 matrix has 64 possible markers. You can find copies

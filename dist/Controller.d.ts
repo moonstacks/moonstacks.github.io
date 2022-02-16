@@ -1,7 +1,18 @@
 import * as THREE from "three";
+
 import { Source } from "./THREEAR";
+
 import { PatternMarker } from "./PatternMarker";
 import { BarcodeMarker } from "./BarcodeMarker";
+
+			import { OrbitControls } from './jsm/controls/OrbitControls.js';
+			import { RoomEnvironment } from './jsm/environments/RoomEnvironment.js';
+
+			import { GLTFLoader } from './jsm/loaders/GLTFLoader.js';
+			import { DRACOLoader } from './jsm/loaders/DRACOLoader.js';
+
+
+
 export interface MarkerPositioningParameters {
 	smooth: boolean;
 	smoothCount: number;
