@@ -4857,7 +4857,7 @@ THREE.OBJLoader = OBJLoader;
 
 } )();
 
-
+//ABOVE ALL LOADER CODE FROM THREE JS, DO NOT EDIT
 
 
 
@@ -4874,9 +4874,9 @@ THREE.OBJLoader = OBJLoader;
 			renderer.domElement.style.left = '0px'
 			document.body.appendChild( renderer.domElement );
 
-			//TEST LIGHTS
-const light = new THREE.DirectionalLight(0xffffff, 1)
-light.position.set(2, 2, 5)
+			// LIGHTS FOR GLTF MODEL
+			const light = new THREE.DirectionalLight(0xffffff, 2)
+			light.position.set(2, 2, 2)
 
 		
 			// init scene and camera
@@ -4928,15 +4928,15 @@ light.position.set(2, 2, 5)
     const color = 0xFFFFFF;
     const intensity = 1;
     const light = new THREE.DirectionalLight(color, intensity);
-    light.position.set(5, 10, 2);
+    light.position.set(0, 0, 0);
     scene.add(light);
     scene.add(light.target);
   }
 const gltfLoader = new GLTFLoader();
-    gltfLoader.load('/data/untitled.glb', (gltf) => {
+    gltfLoader.load('/data/coin_3.glb', (gltf) => {
       const root = gltf.scene;
       scene.add(root);
-	  gltf.scene.scale.set(0.010, 0.010, 0.010);
+	  gltf.scene.scale.set(0.030, 0.030, 0.030);
 	  gltf.scene.position.y = 0.5
 
 
@@ -4953,8 +4953,8 @@ const gltfLoader = new GLTFLoader();
 					// cube.rotation.x += deltaMsec/10000 * Math.PI
 
 					//BELOW TORUS KNOT CODE
-					gltf.scene.rotation.y += deltaMsec/1000 * Math.PI
-					gltf.scene.rotation.z += deltaMsec/1000 * Math.PI
+					gltf.scene.rotation.y += deltaMsec/1500 * Math.PI
+					gltf.scene.rotation.z += deltaMsec/1500 * Math.PI
 	
 
 
@@ -5027,16 +5027,17 @@ renderer.render( scene, camera );
 				// markerGroup.add(torus);
 				// torus.scale.setScalar(0.5);
 
-
-				var geometry = new THREE.CubeGeometry(1,1,1);
-				var material = new THREE.MeshNormalMaterial({
-					transparent : true,
-					opacity: 0.5,
-					side: THREE.DoubleSide
-				}); 
-				var cube = new THREE.Mesh( geometry, material );
-				cube.position.y	= geometry.parameters.height / 2;
-				markerGroup.add(cube)
+				//TUNRED OFF CUBE BELOW
+				// var geometry = new THREE.CubeGeometry(1,1,1);
+				// var material = new THREE.MeshNormalMaterial({
+					// transparent : true,
+					
+					// opacity: 0,
+					// side: THREE.DoubleSide
+				// }); 
+				// var cube = new THREE.Mesh( geometry, material );
+				// cube.position.y	= geometry.parameters.height / 2;
+				// markerGroup.add(cube)
 
 				var patternMarker = new THREEAR.PatternMarker({
 					patternUrl: '../data/patt.hiro',
@@ -5097,7 +5098,7 @@ renderer.render( scene, camera );
 
 
 
-
+//FULL GLTF CODE
 //   const fov = 515;
 //   const aspect = 1;  // the canvas default
 //   const near = 1;
